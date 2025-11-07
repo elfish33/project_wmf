@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WMF | Main Page</title>
+    <link rel="stylesheet" href="./styles/reset.css">
     <!--플러그인 필수 css cdn 연결-->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <!--플러그인 필수 JS cdn 연결-->
     <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="./script/index.js" defer></script>
 </head>
 <body>
     <header>
@@ -52,8 +54,8 @@
     <!-- Bestsellers -->
     <section class="bestsellers">
         <div class="best_title">
-            <h1>BESTSELLERS</h1>
-            <p>WMF가 170년 동안 만든 요리의 명작들</p>
+            <h1 class="title">BESTSELLERS</h1>
+            <p class="sub_title">WMF가 170년 동안 만든 요리의 명작들</p>
         </div>
         <div class="category_filter">
             <button type="button" class="filter_btn">냄비</button>
@@ -64,33 +66,35 @@
             <button type="button" class="filter_btn">주방 가전</button>
             <button type="button" class="filter_btn">조리 도구</button>
         </div>
-        <div class="swiper best_list">
-            <div class="swiper-wrapper"><!-- карточки добавим через JS -->
-                <div class="swiper-slide best_card">
-                    <a href="#" aria-label="WMF 프로피 플러스 키친툴 7pcs 세트 상세 페이지">
-                        <img src="#" alt="WMF 프로피 플러스 키친툴 7pcs 세트" loading="lazy">
-                    </a>
-                    <div class="best_details">
-                        <div class="best_tags">
-                            <span class="sale">SALE</span>
-                            <span class="event">EVENT</span>
-                        </div>
-                        <div class="best_text">
-                            <a href="#">WMF 프로피 플러스 키친툴 7pcs 세트</a>
-                            <div class="price_wrap">
-                                <span class="discount">7%</span>
-                                <span class="price">178,500 원</span>
-                                <span class="price_del"><del>180,000원</del></span>
+        <div class="best_swiper_box">
+            <div class="swiper best_list">
+                <div class="swiper-wrapper"><!-- карточки добавим через JS -->
+                    <div class="swiper-slide best_card">
+                        <a href="#" aria-label="WMF 프로피 플러스 키친툴 7pcs 세트 상세 페이지">
+                            <img src="#" alt="WMF 프로피 플러스 키친툴 7pcs 세트" loading="lazy">
+                        </a>
+                        <div class="best_details">
+                            <div class="best_tags">
+                                <span class="sale">SALE</span>
+                                <span class="event">EVENT</span>
+                            </div>
+                            <div class="best_text">
+                                <a href="#">WMF 프로피 플러스 키친툴 7pcs 세트</a>
+                                <div class="price_wrap">
+                                    <span class="discount">7%</span>
+                                    <span class="price">178,500 원</span>
+                                    <span class="price_del"><del>180,000원</del></span>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <!-- <div class="swiper-slide best_card">slide2</div>
+                    <div class="swiper-slide best_card">slide3</div> -->
                 </div>
-                <!-- <div class="swiper-slide best_card">slide2</div>
-                <div class="swiper-slide best_card">slide3</div> -->
+                <!-- prev & next buttons -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
             </div>
-            <!-- prev & next buttons -->
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
         </div>
     </section>
     <!-- Sub-banner -->
@@ -101,6 +105,10 @@
     </section>
     <!-- MD Swiper -->
     <section class="md_choice">
+        <div class="title_box">
+            <h1 class="title">MD’s CHOICE</h1>
+            <p class="sub_title">WMF가 170년 동안 만든 요리의 명작들</p>
+        </div>
         <div class="swiper md_list">
             <div class="swiper-wrapper"><!-- карточки добавим через JS -->
                 <div class="swiper-slide md_card">
@@ -193,10 +201,238 @@
             </div>
         </div>
     </section>
-    <section></section>
-    <section></section>
-    <section></section>
-    <section></section>
+    <section class="collection">
+        <div class="collection_title">
+            <h1 class="title">WMF FUSIONTEC® COLLECTION</h1>
+            <p class="sub_title">WMF 퓨전테크 퍼펙트 프리미엄 콜렉션</p>
+        </div>
+        <div class="collection_wrap">
+            <div class="collection_img">
+                <img src="" alt="WMF FUSIONTEC® COLLECTION"><!-- src -->
+            </div>
+            <div class="collection_swiper_box">
+                <div class="swiper" id="collection_swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide coll1">
+                            <a href="#" aria-label="WMF 프로피 플러스 키친툴 7pcs 세트 상세 페이지">
+                                <img src="#" alt="WMF 프로피 플러스 키친툴 7pcs 세트" loading="lazy">
+                            </a>
+                            <div class="collection_details">
+                                <div class="collection_tags">
+                                    <span class="sale">SALE</span>
+                                    <span class="event">EVENT</span>
+                                </div>
+                                <div class="product_text">
+                                    <a href="#">WMF 퓨전테크 미네랄 로즈쿼츠 높은 양수냄비 24cm</a>
+                                    <div class="price_wrap">
+                                        <span class="discount">7%</span>
+                                        <span class="price">325,500 원</span>
+                                        <span class="price_del"><del>180,000원</del></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide coll2">
+                            <a href="#" aria-label="WMF 프로피 플러스 키친툴 7pcs 세트 상세 페이지">
+                                <img src="#" alt="WMF 프로피 플러스 키친툴 7pcs 세트" loading="lazy">
+                            </a>
+                            <div class="collection_details">
+                                <div class="collection_tags">
+                                    <span class="sale">SALE</span>
+                                    <span class="event">EVENT</span>
+                                </div>
+                                <div class="product_text">
+                                    <a href="#">WMF 퓨전테크 미네랄 로즈쿼츠 낮은 양수냄비 20cm</a>
+                                    <div class="price_wrap">
+                                        <span class="discount">7%</span>
+                                        <span class="price">325,500 원</span>
+                                        <span class="price_del"><del>180,000원</del></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide coll3">
+                            <a href="#" aria-label="WMF 프로피 플러스 키친툴 7pcs 세트 상세 페이지">
+                                <img src="#" alt="WMF 프로피 플러스 키친툴 7pcs 세트" loading="lazy">
+                            </a>
+                            <div class="collection_details">
+                                <div class="collection_tags">
+                                    <span class="sale">SALE</span>
+                                    <span class="event">EVENT</span>
+                                </div>
+                                <div class="product_text">
+                                    <a href="#">WMF 퓨전테크 미네랄 로즈쿼츠 낮은 양수냄비 20cm</a>
+                                    <div class="price_wrap">
+                                        <span class="discount">7%</span>
+                                        <span class="price">325,500 원</span>
+                                        <span class="price_del"><del>180,000원</del></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide coll4">
+                            <a href="#" aria-label="WMF 프로피 플러스 키친툴 7pcs 세트 상세 페이지">
+                                <img src="#" alt="WMF 프로피 플러스 키친툴 7pcs 세트" loading="lazy">
+                            </a>
+                            <div class="collection_details">
+                                <div class="collection_tags">
+                                    <span class="sale">SALE</span>
+                                    <span class="event">EVENT</span>
+                                </div>
+                                <div class="product_text">
+                                    <a href="#">WMF 퓨전테크 미네랄 로즈쿼츠 높은 양수냄비 24cm</a>
+                                    <div class="price_wrap">
+                                        <span class="discount">7%</span>
+                                        <span class="price">325,500 원</span>
+                                        <span class="price_del"><del>180,000원</del></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide coll5">
+                            <a href="#" aria-label="WMF 프로피 플러스 키친툴 7pcs 세트 상세 페이지">
+                                <img src="#" alt="WMF 프로피 플러스 키친툴 7pcs 세트" loading="lazy">
+                            </a>
+                            <div class="collection_details">
+                                <div class="collection_tags">
+                                    <span class="sale">SALE</span>
+                                    <span class="event">EVENT</span>
+                                </div>
+                                <div class="product_text">
+                                    <a href="#">WMF 퓨전테크 미네랄 로즈쿼츠 높은 양수냄비 24cm</a>
+                                    <div class="price_wrap">
+                                        <span class="discount">7%</span>
+                                        <span class="price">325,500 원</span>
+                                        <span class="price_del"><del>180,000원</del></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide coll6">
+                            <a href="#" aria-label="WMF 프로피 플러스 키친툴 7pcs 세트 상세 페이지">
+                                <img src="#" alt="WMF 프로피 플러스 키친툴 7pcs 세트" loading="lazy">
+                            </a>
+                            <div class="collection_details">
+                                <div class="collection_tags">
+                                    <span class="sale">SALE</span>
+                                    <span class="event">EVENT</span>
+                                </div>
+                                <div class="product_text">
+                                    <a href="#">WMF 퓨전테크 미네랄 로즈쿼츠 높은 양수냄비 24cm</a>
+                                    <div class="price_wrap">
+                                        <span class="discount">7%</span>
+                                        <span class="price">325,500 원</span>
+                                        <span class="price_del"><del>180,000원</del></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+            </div>
+            </div>
+        </div>
+    </section>
+    <section class="sub_banner2">
+        <div class="bnr_img"><span>커피와 디저트, 그리고 함께하는 순간.<br>우리 집 식탁이 가장 특별해집니다.</span></div><!-- background img -->
+    </section>
+    <section class="table_home">
+        <div class="left_wrap">
+            <h1 class="title">Your Home, Your Table, Your Restaurant</h1>
+            <p class="sub_title">집에서 즐기는 프라이빗 레스토랑의 품격 정성스럽게 차린 식탁, 고급스러운 테이블웨어, 그리고 사랑하는 사람들과의 시간.<br>   
+                WMF와 함께라면 우리 집이 가장 특별한 다이닝 공간이 됩니다.  셰프처럼 준비하고, 손님처럼 즐기세요.<br>
+                당신의 식탁이 레스토랑이 되는 순간을 경험해보세요.
+            </p>
+            <div class="card_wrap">
+                <div class="product_card">
+                    <a href="#" class="product_img"><img src="" alt="double-walled glasses 2pcs"></a>
+                    <div class="product_detail">
+                        <h2 class="product_title">SmarTea double-walled glasses 2pcs</h2>
+                        <p class="product_price">45,000원</p>
+                    </div>
+                </div>
+                <div class="product_card">
+                    <a href="#" class="product_img"><img src="" alt="EasyPlus White wine glasses"></a>
+                    <div class="product_detail">
+                        <h2 class="product_title">EasyPlus White wine glasses</h2>
+                        <p class="product_price">45,000원</p>
+                    </div>
+                </div>
+                <div class="product_card">
+                    <a href="#" class="product_img"><img src="" alt="Replacement Glass carafe 1,5L BASIC"></a>
+                    <div class="product_detail">
+                        <h2 class="product_title">Replacement Glass carafe 1,5L BASIC</h2>
+                        <p class="product_price">52,000원</p>
+                    </div>
+                </div>
+                <div class="product_card">
+                    <a href="#" class="product_img"><img src="" alt="Chopsticks set Nuova, 4-piece"></a>
+                    <div class="product_detail">
+                        <h2 class="product_title">Chopsticks set Nuova, 4-piece</h2>
+                        <p class="product_price">26,800원</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card_wrap">
+                <div class="product_card">
+                    <a href="#" class="product_img"><img src="" alt="Chopsticks set Nuova, 4-piece"></a>
+                    <div class="product_detail">
+                        <h2 class="product_title">Chopsticks set Nuova, 4-piece</h2>
+                        <p class="product_price">26,800원</p>
+                    </div>
+                </div>
+                <div class="product_card">
+                    <a href="#" class="product_img"><img src="" alt="Cutlery Set Flame Plus, Cromargan protect®"></a>
+                    <div class="product_detail">
+                        <h2 class="product_title">Cutlery Set Flame Plus, Cromargan protect®</h2>
+                        <p class="product_price">523,000원</p>
+                    </div>
+                </div>
+                <div class="product_card">
+                    <a href="#" class="product_img"><img src="" alt="Salad servers Art Deco"></a>
+                    <div class="product_detail">
+                        <h2 class="product_title">Salad servers Art Deco</h2>
+                        <p class="product_price">106,000원</p>
+                    </div>
+                </div>
+                <div class="product_card">
+                    <a href="#" class="product_img"><img src="" alt="EasyPlus White wine glasses"></a>
+                    <div class="product_detail">
+                        <h2 class="product_title">EasyPlus White wine glasses</h2>
+                        <p class="product_price">45,000원</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="right_wrap">
+            <div class="table_img">
+                <div class="plus_btn plus1"><button type="button"></button><!-- svg --></div>
+                <div class="plus_btn plus2"><button type="button"></button><!-- svg --></div>
+                <div class="plus_btn plus3"><button type="button"></button><!-- svg --></div>
+                <div class="plus_btn plus4"><button type="button"></button><!-- svg --></div>
+                <div class="plus_btn plus5"><button type="button"></button><!-- svg --></div>
+                <div class="plus_btn plus6"><button type="button"></button><!-- svg --></div>
+                <div class="plus_btn plus7"><button type="button"></button><!-- svg --></div>
+                <div class="product_popup">
+                    <a href="#" class="product_img"><img src="" alt="EasyPlus White wine glasses"></a>
+                    <div class="product_detail">
+                        <h2 class="product_title">EasyPlus White wine glasses</h2>
+                        <p class="product_price">45,000원</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="instagram">
+        <div class="insta_wrap">
+            <a href="#"><div class="insta_img img1"></div><!-- background --></a>
+            <a href="#"><div class="insta_img img2"></div><!-- background --></a>
+            <a href="#"><div class="insta_img img3"></div><!-- background --></a>
+            <a href="#"><div class="insta_img img4"></div><!-- background --></a>
+            <!-- hover : иконка? текст?  -->
+        </div>
+    </section>
     <footer></footer>
 </body>
 </html>
